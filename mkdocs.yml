@@ -108,8 +108,8 @@ nav:
 # [top]
 theme:
   name: material
-  logo: https://pic1.imgdb.cn/item/6796529ad0e0a243d4f81f4d.png
-  favicon: https://pic1.imgdb.cn/item/6796529ad0e0a243d4f81f4d.png
+  logo: ME/Logo/yuanxiaolian_loge.png
+  favicon: ME/Logo/yuanxiaolian_loge.png
   # [切换日间模式和夜间模式]
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
   palette:
