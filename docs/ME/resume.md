@@ -8,17 +8,17 @@ hide:
 comments: false
 ---
 
+<center><font  color= #757575 size=6 >请使用PC端查看，谢谢</font></center>  
 
-请使用PC端查看，谢谢
 ---
 
 <div class="grid cards" markdown>
 
--   :octicons-bookmark-16:{ .lg .middle } __个人简历__
+-    __个人简历__
 
     ---
 
-    <iframe src="../个人简历.pdf" width="100%" height="1000px" style="border: 1px solid #ccc; overflow: auto;">
+    <iframe src="../个人简历.pdf" width="100%" height="1200px" style="border: 1px solid #ccc; overflow: auto;">
     </iframe>
     
 
