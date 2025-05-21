@@ -10,6 +10,7 @@ site_description: 林海城的个人网站
 nav:
   - 我: 
     - ME/index.md
+    - ME/resume.md
 
   - 读书:
     - BOOK/index.md
