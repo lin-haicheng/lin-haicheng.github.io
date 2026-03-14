@@ -11,8 +11,8 @@ nav:
   - 我: 
     - ME/index.md
 
-  - 读书:
-    - BOOK/index.md
+#  - 读书:
+#    - BOOK/index.md
 
   - 文笔:
     - ESSAY/index.md
@@ -49,6 +49,14 @@ nav:
 
   - 博客:
     - BLOG/index.md
+    - 软件: 
+      - 程序的烧录方式: BLOG/Software/程序的烧录方式/程序的烧录方式.md
+      - 51单片机: BLOG/Software/51单片机/51.md
+      - STM32: BLOG/Software/STM32/STM32.md
+    - 硬件:
+      - PCB: BLOG/Hardware/PCB/PCB.md
+    - 应用:
+      - Altium_Designer: BLOG/App/Altium_Designer/AD常用快捷键/AD常用快捷键.md
     - Markdown: 
       - Markdown语法学习: BLOG/Markdown/markdown-grammar.md
       - Latex常用符号整理: BLOG/Markdown/latex.md
@@ -76,8 +84,9 @@ nav:
       - 存储器及各种存储器间的关系: BLOG/ElectronicEngineering/storage.md
       - Verilog 仿真流程: BLOG/ElectronicEngineering/verilog-simulation.md
       - yosys 简单入门: BLOG/ElectronicEngineering/yosys-try.md
-  - 开发:
-    - DEV/index.md
+
+#  - 开发:
+#    - DEV/index.md
 
   - 研究:
     - RESEARCH/index.md
