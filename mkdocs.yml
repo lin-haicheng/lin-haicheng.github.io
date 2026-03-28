@@ -56,7 +56,7 @@ nav:
     - 硬件:
       - PCB: BLOG/Hardware/PCB/PCB.md
     - 应用:
-      - Altium_Designer: BLOG/App/Altium_Designer/AD常用快捷键/AD常用快捷键.md
+      - Altium_Designer常用快捷键: BLOG/App/Altium_Designer/AD常用快捷键/AD常用快捷键.md
     - Markdown: 
       - Markdown语法学习: BLOG/Markdown/markdown-grammar.md
       - Latex常用符号整理: BLOG/Markdown/latex.md

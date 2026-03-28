@@ -428,9 +428,9 @@ git branch --move(-m) master main
 
 #### 连接远程仓库
 
-远程仓库，就是一个Git服务器。它可以存放你的代码，然后多台电脑一起链接到这个Git服务器，大家就可以开始协作了。如果一个平台有很多的远程仓库，我们一般将其称作代码托管平台。世界知名度最高的代码托管平台是GitHub，大家都在用，我们之后也会用GitHub进行演示，以后大家也许也会使用GitHub进行合作开发。其实还有很多的代码托管平台，比如[gitee](https://gitee.com/){target="_blank"}（码云），GitLab（企业可以自行使用部署，如<git.tsinghua.edu.cn>{target="_blank"} ）
+远程仓库，就是一个Git服务器。它可以存放你的代码，然后多台电脑一起链接到这个Git服务器，大家就可以开始协作了。如果一个平台有很多的远程仓库，我们一般将其称作代码托管平台。世界知名度最高的代码托管平台是GitHub，大家都在用，我们之后也会用GitHub进行演示，以后大家也许也会使用GitHub进行合作开发。其实还有很多的代码托管平台，比如[gitee](https://gitee.com/){target="_blank"}（码云）。
 
-连接这些代码托管平台，你得首先有一个账号，直接注册就好了。如果用的是THU的GitLab，用清华邮箱就可以登陆。
+连接这些代码托管平台，你得首先有一个账号，直接注册就好了。
 
 我们之后会用这个账号去将本地的代码推上云端，会将云端的代码下载到本地。但是如果我们每次登陆都要输入密码，这是一件很费力的事情。所以我们需要配置ssh。
 
@@ -960,5 +960,5 @@ AS IS 中文意思：按照原样的
 
 ## 参考：
 
->[杨希杰的Git 讲座](https://yang-xijie.github.io/LECTURE/Git/git/)
->[B站视频教程](https://www.bilibili.com/video/BV1eh411v7gt/)
+>[杨希杰的Git 讲座](https://yang-xijie.github.io/LECTURE/Git/git/){target="_blank"}  
+>[B站视频教程](https://www.bilibili.com/video/BV1eh411v7gt/){target="_blank"}  
