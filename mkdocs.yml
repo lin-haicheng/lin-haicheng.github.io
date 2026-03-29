@@ -55,6 +55,7 @@ nav:
       - STM32: BLOG/Software/STM32/STM32.md
     - 硬件:
       - PCB: BLOG/Hardware/PCB/PCB.md
+      - PCB_2: BLOG/Hardware/PCB_2/PCB_2.md
     - 应用:
       - Altium_Designer常用快捷键: BLOG/App/Altium_Designer/AD常用快捷键/AD常用快捷键.md
     - Markdown: 
