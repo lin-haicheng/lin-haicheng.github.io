@@ -1,0 +1,6057 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="林海城的个人网站">
+      
+      
+        <meta name="author" content="林海城">
+      
+      
+        <link rel="canonical" href="https://lin-haicheng.github.io/BLOG/Hardware/PCB/PCB/">
+      
+      
+        <link rel="prev" href="../../../Software/STM32/STM32/">
+      
+      
+        <link rel="next" href="../../../App/Altium_Designer/AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../ME/Logo/yuanxiaolian_loge.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PCB - 忆个小破站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pcb" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="忆个小破站" class="md-header__button md-logo" aria-label="忆个小破站" data-md-component="logo">
+      
+  <img src="../../../../ME/Logo/yuanxiaolian_loge.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            忆个小破站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PCB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lin-haicheng/lin-haicheng.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lin-haicheng.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ME/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  我
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ESSAY/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  文笔
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../LECTURE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  讲稿
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  博客
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../RESEARCH/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  研究
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../REPRODUCE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  转载
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../WEBSITE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  网站
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="忆个小破站" class="md-nav__button md-logo" aria-label="忆个小破站" data-md-component="logo">
+      
+  <img src="../../../../ME/Logo/yuanxiaolian_loge.png" alt="logo">
+
+    </a>
+    忆个小破站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lin-haicheng/lin-haicheng.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lin-haicheng.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../ME/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    我
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    我
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../ESSAY/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文笔
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文笔
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文章
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文章
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ESSAY/Articles/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ESSAY/Articles/study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ESSAY/Articles/science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ESSAY/Articles/try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    尝试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    随笔
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    随笔
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ESSAY/Jottings/0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../LECTURE/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    讲稿
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    讲稿
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/YuYan/English/pronunciation/pronunciation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    音标
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/YuYan/English/vocabulary/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    词汇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/YuYan/English/grammar/grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Programming/C%2B%2B/C%2B%2B_learning-phase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习阶段
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Programming/C%2B%2B/C%2B%2B_Begin/C%2B%2B_Begin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Programming/C%2B%2B/C%2B%2B_core/C%2B%2B_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    核心
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Programming/C%2B%2B/C%2B%2B_raise/C%2B%2B_raise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提高
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Linux/commands-concise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行精简版
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    git
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    git
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Git/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    github
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    github
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Git/GitHub/github-pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/MKdocs/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Foc/foc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深入浅出讲解FOC算法与SVPWM技术(稚晖君)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Systems/systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Systems/ros/ros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS(机器人操作系统)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    博客
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    博客
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%83%A7%E5%BD%95%E6%96%B9%E5%BC%8F/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%83%A7%E5%BD%95%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    程序的烧录方式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/51%E5%8D%95%E7%89%87%E6%9C%BA/51/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    51单片机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/STM32/STM32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    硬件
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、相关PCB术语的概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、相关PCB术语的概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.PCB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pcba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.PCBA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3ict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.ICT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4fct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.FCT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.QC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.SI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.PI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8emc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.EMC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、PCB板的生产工艺及供应商的制程能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、PCB板的生产工艺及供应商的制程能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.板层、板厚、单板以及拼版尺寸的介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.板层、板厚、单板以及拼版尺寸的介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1板层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 板厚
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 单板及拼版尺寸
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2ctitg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.板材类型、CTI值、Tg值的介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.板材类型、CTI值、Tg值的介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1板材
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 CTI值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Tg值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.完成铜厚的介绍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.阻焊油、丝印的介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.阻焊油、丝印的介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 阻焊油
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 丝印
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、PCBA的生产工艺
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、PCBA的生产工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.各个机械层的用途
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pcba_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.PCBA的焊接工艺
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.PCBA的焊接工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1回流焊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2波峰焊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 手工焊接
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.生产工艺需求对元器件的布局限制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.生产工艺需求对元器件的布局限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1三防漆的喷涂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pcba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 PCBA的运输周转
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 元器件的机器贴装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 机器贴装引申知识
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 机器贴装引申知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        顶层（TOP）RI插入卡盘死区
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottomri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        底层（BOTTOM）RI插入卡盘死区
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、PCB设计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、PCB设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.电路基础知识
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.元器件以及封装的制作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.层用途以及定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.封装匹配网络表导入PCB文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.安规、载流等参考依据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.安规、载流等参考依据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 线路的安全距离
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 线路的安全距离">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例子1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例子2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 导线的载流能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 导线的载流能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcb_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        影响PCB铜箔载流的因素
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        载流能力参考标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用什么计算器，计算载流比较符合设计？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.布局布线、工艺调整
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.布局布线、工艺调整">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 布局设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 布线设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 工艺调整
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7drc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.DRC检查规则
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.DRC检查规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 检查的习惯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 规则设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.提供3D简视图
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../App/Altium_Designer/AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Altium_Designer常用快捷键
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markdown
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Markdown/markdown-grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown语法学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Markdown/latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Latex常用符号整理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Markdown/vscode-extension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VScode安装和插件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/vim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vim 学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux 使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/unix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unix and Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/pi-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派入门指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    macOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../macOS/editing-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文字编辑技巧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../macOS/zoom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    放大镜
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../macOS/tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS 使用 tree 命令和访达进行任务管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../macOS/stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mac 使用 OBS 直播
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../macOS/intel-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intel Mac Windows 10 安装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maths/elementary_arithmetic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    加减乘除
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maths/linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性代数复习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    物理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    物理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/electromagnetics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    物理电磁学笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Electron/%E8%BF%9B%E5%88%B6%E6%8D%A2%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进制换算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ElectronicEngineering/rlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电路方程 | 二阶线性时不变电路方程列写及五要素法总结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ElectronicEngineering/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    存储器及各种存储器间的关系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ElectronicEngineering/verilog-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verilog 仿真流程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ElectronicEngineering/yosys-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    yosys 简单入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../RESEARCH/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    地理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../RESEARCH/DiLi/zhongguo/zhongguo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../REPRODUCE/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    转载
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    转载
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文章
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文章
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../REPRODUCE/article/my-best-teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    我最好的老师
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../REPRODUCE/article/how-to-ask-questions-the-smart-way/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提问的智慧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../WEBSITE/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网站
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网站
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../WEBSITE/Link/link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网站链接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网站构建
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网站构建
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../WEBSITE/Build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../WEBSITE/Build/qitabuild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../WEBSITE/Mac/macbibei/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC开发必备
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../WEBSITE/Mac/macsousuo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC软件搜索网站
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、相关PCB术语的概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、相关PCB术语的概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.PCB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pcba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.PCBA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3ict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.ICT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4fct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.FCT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.QC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.SI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.PI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8emc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.EMC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、PCB板的生产工艺及供应商的制程能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、PCB板的生产工艺及供应商的制程能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.板层、板厚、单板以及拼版尺寸的介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.板层、板厚、单板以及拼版尺寸的介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1板层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 板厚
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 单板及拼版尺寸
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2ctitg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.板材类型、CTI值、Tg值的介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.板材类型、CTI值、Tg值的介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1板材
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 CTI值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Tg值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.完成铜厚的介绍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.阻焊油、丝印的介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.阻焊油、丝印的介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 阻焊油
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 丝印
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、PCBA的生产工艺
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、PCBA的生产工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.各个机械层的用途
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pcba_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.PCBA的焊接工艺
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.PCBA的焊接工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1回流焊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2波峰焊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 手工焊接
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.生产工艺需求对元器件的布局限制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.生产工艺需求对元器件的布局限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1三防漆的喷涂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pcba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 PCBA的运输周转
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 元器件的机器贴装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 机器贴装引申知识
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 机器贴装引申知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        顶层（TOP）RI插入卡盘死区
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottomri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        底层（BOTTOM）RI插入卡盘死区
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、PCB设计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、PCB设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.电路基础知识
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.元器件以及封装的制作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.层用途以及定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.封装匹配网络表导入PCB文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.安规、载流等参考依据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.安规、载流等参考依据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 线路的安全距离
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 线路的安全距离">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例子1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例子2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 导线的载流能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 导线的载流能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcb_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        影响PCB铜箔载流的因素
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        载流能力参考标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用什么计算器，计算载流比较符合设计？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.布局布线、工艺调整
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.布局布线、工艺调整">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 布局设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 布线设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 工艺调整
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7drc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.DRC检查规则
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.DRC检查规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 检查的习惯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 规则设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.提供3D简视图
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/lin-haicheng/lin-haicheng.github.io/edit/main/docs/BLOG/Hardware/PCB/PCB.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="pcb">PCB常见知识及工艺解析<a class="headerlink" href="#pcb" title="Permanent link">&para;</a></h1>
+<h2 id="pcb_1">一、相关PCB术语的概念<a class="headerlink" href="#pcb_1" title="Permanent link">&para;</a></h2>
+<h3 id="1pcb">1.PCB<a class="headerlink" href="#1pcb" title="Permanent link">&para;</a></h3>
+<p>印制电路板 PCB （Printed circuit boards），又称印刷电路板，是电子元器件电气连接的提供者。<br />
+就是一块已经按电路布局要求腐蚀和铺上了阻焊层，但还没有电子元器件的铜板。</p>
+<p>印制电路板按照线路板层数可分为单面板、双面板、四层板、六层板以及其他多层线路板。</p>
+<p><strong>单面板：</strong></p>
+<p><img alt="PCB单层板" src="../image/PCB%E5%8D%95%E9%9D%A2%E6%9D%BF.png" /></p>
+<p><img alt="PCB单层板_材料图" src="../image/PCB%E5%8D%95%E9%9D%A2%E6%9D%BF_%E6%9D%90%E6%96%99%E5%9B%BE.png" /></p>
+<p><strong>双面板：</strong></p>
+<p><img alt="PCB多层板" src="../image/PCB%E5%8F%8C%E9%9D%A2%E6%9D%BF.png" /></p>
+<p><img alt="PCB双层板_材料图" src="../image/PCB%E5%8F%8C%E9%9D%A2%E6%9D%BF_%E6%9D%90%E6%96%99%E5%9B%BE.png" /></p>
+<h3 id="2pcba">2.PCBA<a class="headerlink" href="#2pcba" title="Permanent link">&para;</a></h3>
+<p>装配印刷电路板 PCBA（Printed circuit boards Assembly），也就是说 PCBA 是经过 PCB 空板 <strong>SMT 上件</strong>，再经过 <strong>DIP 插件</strong>、<strong>烧录程序后</strong>（分离线和在线烧录，有些简单的纯硬件板甚至不用烧录程序），完成了整个制程后所得的产物。</p>
+<p><img alt="PCBA" src="../image/PCBA.png" /></p>
+<h3 id="3ict">3.ICT<a class="headerlink" href="#3ict" title="Permanent link">&para;</a></h3>
+<p>自动在线测试仪 ICT （In—Circuit—Tester），测试探针接触PCB layout出来的测试点来检测PCBA的线路开路、短路、所有零件的焊接情况，即测电压和电流的。</p>
+<p>可分为开路测试、短路测试、电阻测试、电容测试、二极管测试、三极管测试、场效应管测试、IC管脚测试等，以及其它通用和特殊元器件的漏装、错装、参数值偏差、焊点连焊、线路板开短路等故障，并将故障是哪个组件或开短路位于哪个点准确告诉用户（工程师）。</p>
+<p><img alt="ICT" src="../image/ICT.png" /></p>
+<h3 id="4fct">4.FCT<a class="headerlink" href="#4fct" title="Permanent link">&para;</a></h3>
+<p>一般专指PCBA的功能测试 FCT （Functional Circuit Test），即测功能是否正常的，一般使用专门的测试工装进行测试。</p>
+<p>它指的是对测试目标板(UUT：Unit Under Test)提供模拟的运行环境（激励和负载），使其工作于各种设计状态，从而获取到各个状态的参数来验证UUT的功能好坏的测试方法。简单地说，就是对UUT加载合适的激励，测量输出端响应是否合乎要求。</p>
+<p><img alt="FCT测试工装" src="../image/FCT%E6%B5%8B%E8%AF%95%E5%B7%A5%E8%A3%85.png" /></p>
+<h3 id="5qc">5.QC<a class="headerlink" href="#5qc" title="Permanent link">&para;</a></h3>
+<p>质量控制 QC （Quality Control），其实就是质量管理人员对做好的产品做了一次总的测试和质量评估。  </p>
+<p>它指的是对测试目标板(UUT：Unit Under Test)提供模拟的运行环境（激励和负载），使其工作于各种设计状态，从而获取到各个状态的参数来验证UUT的功能好坏的测试方法。简单地说，就是对UUT加载合适的激励，测量输出端响应是否合乎要求。</p>
+<p><img alt="QC" src="../image/QC.png" /></p>
+<h3 id="6si">6.SI<a class="headerlink" href="#6si" title="Permanent link">&para;</a></h3>
+<p>信号完整性 SI （Signal Integrity），即产品内部信号，能不能正常的传输数据和与外部器件进行通讯。</p>
+<p>它指的是信号在信号线上的质量，即信号在电路中以正确的时序和电压作出响应的能力。如果电路中信号能够以要求的时序、持续时间和电压幅度到达接收器，则可确定该电路具有较好的信号完整性。反之，当信号不能正常响应时，就出现了信号完整性问题。</p>
+<h3 id="7pi">7.PI<a class="headerlink" href="#7pi" title="Permanent link">&para;</a></h3>
+<p>电源完整性 PI（Power Integrity）。是确认电源来源及目的端的电压及电流是否符合需求，电源完整性在现今的电子产品中相当重要。</p>
+<p>有几个有关电源完整性的层面：芯片层面、芯片封装层面、电路板层面及系统层面。在电路板层面的电源完整性要达到</p>
+<p>以下三个需求：</p>
+<p>1.使芯片引脚的电压涟波比规格要小一些（例如电压和1V之间的误差小于+/-50 mV）</p>
+<p>2.控制接地反弹（也称为同步切换噪声SSN、同步切换输出SSO）</p>
+<p>3.降低电磁干扰（EMI）并且维持电磁兼容性（EMC）：电源分布网络（PDN）是电路板上最大型的导体，因此也是最容易发射及接收噪声的天线。</p>
+<h3 id="8emc">8.EMC<a class="headerlink" href="#8emc" title="Permanent link">&para;</a></h3>
+<p>电磁兼容性 EMC（Electro-Magnetic Compatibility）。它是指设备或系统在其电磁环境中符合要求运行并不对其环境中的任何设备产生无法忍受的电磁干扰的能力。  </p>
+<p>就像人得病后，EMI是自身病毒对别人攻击的力度和范围，EMS是我对别人所带病毒攻击的抗性。EMC要求的是你干扰不到我，我干扰不到你。井水不犯河水，和谐共处。</p>
+<p>因此，EMC包括两个方面的要求：</p>
+<ul>
+<li>
+<p>一方面是指设备在正常运行过程中对所在环境产生的电磁干扰不能超过一定的限值（EMI）；</p>
+</li>
+<li>
+<p>另一方面是指器具对所在环境中存在的电磁干扰具有一定程度的抗扰度，即电磁敏感性（EMS）。</p>
+</li>
+</ul>
+<h2 id="pcb_2">二、PCB板的生产工艺及供应商的制程能力<a class="headerlink" href="#pcb_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1.板层、板厚、单板以及拼版尺寸的介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="11">1.1板层<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>单层板，也叫单面板，只能单面布线，只有一面是焊接面。例如，小型开关电源大都是单层板。</p>
+</li>
+<li>
+<p>双层板，两层可以是焊接面，可以双面布线，这种PCB用得最广（公司用得最多）。</p>
+</li>
+<li>
+<p>四层通孔板，没有盲、埋孔，相对有盲埋孔四层板成本要低。中间两层是双面覆铜板，也叫Core，首先制作Layer2和Layer3，然后上下各压一层，最后打通孔。</p>
+</li>
+<li>
+<p>四层盲埋孔板，先制作中间两层，然后上下各压一层，激光镭射过孔，最后打通孔。（四层盲埋孔板一般情况比较少用）</p>
+</li>
+<li>
+<p>多层板，器件密度较大，网络数量较多或特殊布线需求才考虑用多层板。</p>
+</li>
+</ul>
+<p><img alt="板层" src="../image/%E6%9D%BF%E5%B1%82.png" /></p>
+<h4 id="12">1.2 板厚<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>PCB厚度标准和厚度公差<br />
+    常规板厚1.6mm（±0.15mm）;<br />
+    偶尔用2.0mm，公差为±板厚10%<br />
+​   <img alt="PCB板厚" src="../image/PCB%E6%9D%BF%E5%8E%9A.png" /></p>
+</li>
+<li>
+<p>叠层构造</p>
+<ul>
+<li>双面板示例：<br />
+外层铜皮为1OZ,1.6mm成品双面板内层基材(Core)厚度一般为1.46mm;<br />
+外层铜皮为2OZ,1.6mm成品双面板内层基材(Core)厚度一般为1.53mm  </li>
+<li>四层板示例：Core与Prepreg，以及铜箔组合构成板厚（<strong>如图所示</strong>）
+<img alt="PCB叠层板厚" src="../image/PCB%E5%8F%A0%E5%B1%82%E6%9D%BF%E5%8E%9A.png" /></li>
+<li>PP与Core的区别  <ul>
+<li>前者材质半固态，类似于纸板，后者材质坚硬，类似于铜板；</li>
+<li>前者类似于粘合剂+绝缘体，后者是基础材料，功能不一样；</li>
+<li>PP能够卷曲而Core无法弯曲</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="13">1.3 单板及拼版尺寸<a class="headerlink" href="#13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>单板尺寸较大时，按单板尺寸生产和加工（350*300）；  </li>
+<li>单板尺寸较小时，按拼版尺寸生产和加工；<br />
+    一般原则：当PCB 单元板的尺寸&lt;50mm x 50mm 时，必须做拼板；<br />
+    当拼板需要做V-CUT 时，拼板的PCB 板厚应小于3.5mm；  <br />
+    最佳：平行传送边方向的V-CUT 线数量≤3（对于细长的单板可以例外）  </li>
+<li>不规则形状的而没拼板的PCB 单板，且使制成板加工有难度的PCB，应在过板方向两侧加工艺边，工艺边最小宽度为3mm。  </li>
+<li>若PCB 上有大面积开孔的地方，在设计时要先将孔补全，以避免焊接时造成漫锡和板变形，补全部分和原有的PCB 部分要以邮票孔方式连接，在波峰焊后将之去掉。  </li>
+<li>总结：根据单板尺寸、单板形状以及器件数量等因素综合考虑拼版方式，使生产加工方便的同时达到成本最低化。<br />
+    PCB 的板角应为R 型倒角，为方便单板加工，不拼板的单板板角应为R 型倒角，对于有工艺边和拼板的单板，工艺边应为R 型倒角，一般圆角直径为Φ6，小板可适当调整。有特殊要求按结构图表示方法明确标出R 大小，以便厂家加工。  </li>
+</ul>
+<h3 id="2ctitg">2.板材类型、CTI值、Tg值的介绍<a class="headerlink" href="#2ctitg" title="Permanent link">&para;</a></h3>
+<h4 id="21">2.1板材<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
+<ul>
+<li>按板的增强材料不同，可划分为：纸基、<strong>玻璃纤维布基</strong>、复合基(CEM系列)、积层多层板基和特殊材料基(陶瓷、金属芯基等)五大类。</li>
+<li>按阻燃特性的等级划分可以分为阻燃型（94V—0 /V-1 /V-2 ）和不阻燃型94-HB 两类。<br />
+    如：<br />
+    94HB：普通纸板，不防火（最低档的材料，模冲孔，不能做电源板）<br />
+    94V0：阻燃纸板（模冲孔）  </li>
+<li>按胶黏剂不同可以分为酚醛树脂、环氧树脂和聚酯树脂等<br />
+    如：<br />
+    FR-4 :玻璃纤维布基CCL环氧树脂板<br />
+<img alt="板材CTI" src="../image/PCB%E6%9D%BF%E6%9D%90.png" /></li>
+</ul>
+<h4 id="22-cti">2.2 CTI值<a class="headerlink" href="#22-cti" title="Permanent link">&para;</a></h4>
+<p>CTI（Comparative Tracking Index）相比电痕化指数（相对耐漏电起痕指数）</p>
+<p>含义：材料表面能经受住50滴电解液而没有行成漏电起痕的最高电压值，以V表示。</p>
+<p>CTI等级数字越小，耐漏电性越高。</p>
+<p><img alt="相比电痕化指数CTI" src="../image/%E7%9B%B8%E6%AF%94%E7%94%B5%E7%97%95%E5%8C%96%E6%8C%87%E6%95%B0CTI.png" /></p>
+<h4 id="23-tg">2.3 Tg值<a class="headerlink" href="#23-tg" title="Permanent link">&para;</a></h4>
+<p>电路板必须耐燃，在一定温度下不能燃烧，只能软化。这时的温度点就叫做玻璃态转化温度(Tg点)。</p>
+<p>通常我们基板是固态的，当基板由固态融化为橡胶态流质的时候，有一个临界温度点，这温度点就叫TG点，即熔点。</p>
+<p>TG一般划分为3个等级，一般TG、中TG 、高TG  </p>
+<ul>
+<li>
+<p>一般TG值一般在130、140</p>
+</li>
+<li>
+<p>中TG 值一般是150</p>
+</li>
+<li>
+<p>高TG值一般在170以上。</p>
+</li>
+</ul>
+<p><img alt="Tg值" src="../image/Tg%E5%80%BC.png" /></p>
+<p>TG点越高表示板材在压合的时候温度要求越高，压出来的板子也会比较硬和脆，在一定程度上会影响后工序机械钻孔的质量以及使用时电性特性。</p>
+<p>PCB线路板的温度问题与原材料、锡膏、表面零件的承受温度有关，通常PCB线路板最高可耐温300度，5-10秒；过无铅波峰焊时大概温度是260，过有铅大约是240度。</p>
+<h3 id="3">3.完成铜厚的介绍<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>铜箔作为pcb的导电体，容易粘合于绝缘层，腐蚀后形成电路图样。</p>
+<p><img alt="PCB铜厚_图样" src="../image/PCB%E9%93%9C%E5%8E%9A_%E5%9B%BE%E6%A0%B7.png" /></p>
+<ul>
+<li>
+<p>铜箔的厚度用oz(盎(àng)司)表示，1oz=0.035mm</p>
+</li>
+<li>
+<p>国际pcb铜箔常用厚度有：17.5um、35um、50um、70um。当然一些比较特殊的电路板会用到3OZ、4OZ、5OZ...8OZ等，根据产品需求选择适合的铜厚。</p>
+</li>
+<li>
+<p>Pcb板铜厚的使用主要取决于PCB的用途和信号的电流大小，70%的线路板使用的是35um（0.035mm）的铜箔厚度。</p>
+</li>
+<li>
+<p>Pcb板用途不同，所使用的铜厚也有所不同。像一般的消费类及通讯类产品，使用的是0.5oz、1oz、2oz；对于大多的大电流，如高压产品、电源板等产品，一般都是使用3oz以上属厚铜产品</p>
+</li>
+</ul>
+<p><img alt="PCB铜厚" src="../image/PCB%E9%93%9C%E5%8E%9A.png" /></p>
+<h3 id="4">4.阻焊油、丝印的介绍<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<h4 id="41">4.1 阻焊油<a class="headerlink" href="#41" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>阻焊油的介绍<br />
+  绿油，指的是PCB上涂覆在铜箔上面的油墨，这层油墨可以覆盖除了焊盘等以外的导体，可以在使用过程中避免焊接短路、延长PCB使用寿命等作用；一般叫阻焊或者防焊。<br />
+  颜色有绿色、黑色、红色、蓝色、黄色、白色、亚光颜色等等，大部分PCB使用<strong>绿色阻焊油墨，也就是通常叫的绿油</strong>。  </p>
+</li>
+<li>
+<p>PCB板中阻焊油的作用</p>
+<ul>
+<li>阻焊，达到对外绝缘的目的；</li>
+<li>保护不需要裸露在外的线路；</li>
+<li>美化外观。</li>
+</ul>
+</li>
+</ul>
+<h4 id="42">4.2 丝印<a class="headerlink" href="#42" title="Permanent link">&para;</a></h4>
+<p>丝印层为文字层，属于PCB中的最上面一层，一般用于注释用。这是为了方便电路的安装和维修等，在印刷板的上下两表面印刷上所需要的标志图案和文字代号等的专用层。（<strong>丝印一般默认用白色</strong>）</p>
+<p><img alt="阻焊油和丝印" src="../image/%E9%98%BB%E7%84%8A%E6%B2%B9%E5%92%8C%E4%B8%9D%E5%8D%B0.png" /></p>
+<h2 id="pcba">三、PCBA的生产工艺<a class="headerlink" href="#pcba" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1.各个机械层的用途<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>机械层一共有16层，统一规范每层的用途（各公司可能要求不同，仅供参考）。</p>
+<p><img alt="各机械层的用途" src="../image/%E5%90%84%E6%9C%BA%E6%A2%B0%E5%B1%82%E7%9A%84%E7%94%A8%E9%80%94.png" /></p>
+<h3 id="2pcba_1">2.PCBA的焊接工艺<a class="headerlink" href="#2pcba_1" title="Permanent link">&para;</a></h3>
+<p>一般元器件有几种焊接方式：回流焊、波峰焊和手工焊接。</p>
+<h4 id="21_1">2.1回流焊<a class="headerlink" href="#21_1" title="Permanent link">&para;</a></h4>
+<p>回流焊是一种零部件的焊接面涂覆焊料后组装在一起，加热至焊料熔融，再使焊接区冷却的焊接方式。这种方式主要用于焊接<strong>贴片料</strong>。</p>
+<p>优势：温度易于控制，焊接过程中还能避免氧化，制造成本也更容易控制。</p>
+<p><img alt="回流焊构图" src="../image/%E5%9B%9E%E6%B5%81%E7%84%8A%E5%9B%BE%E8%A7%A3.png" /></p>
+<p><strong>回流焊机：</strong></p>
+<p><img alt="回流焊" src="../image/%E5%9B%9E%E6%B5%81%E7%84%8A%E6%9C%BA.png" /></p>
+<ul>
+<li>红胶工艺：红胶是一种聚稀化合物，主要成份为基料（即主体高份子材料）、填料、固化剂、其它助剂等。在生产中，利用红胶的目的就是使零件牢固地粘贴于PCB表面，防止其掉落。<br />
+  因此贴片胶是属于纯消耗非必需的工艺过程产物，现在随着PCA设计与工艺的不断改进，通孔回流焊、双面回流焊都已实现，用到贴片胶的PCA贴装工艺呈越来越少的趋势。一般是<strong>双面贴片或者有大件物料</strong>的时候使用，使用的时是<strong>先用红胶钢网印上的红胶（印元器件中间的绿油上），然后再用锡膏钢网印上锡膏（印焊盘）</strong>，也就是说要单独做钢网。</li>
+</ul>
+<h4 id="22">2.2波峰焊<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
+<p>波峰焊是让插件板的焊接面直接与高温液态锡接触达到焊接目的，其高温液态锡保持一个斜面，并由特殊装置使液态锡形成一道道类似波浪的现象，所以叫“波峰焊”。<br />
+这种方式主要用于焊接<strong>插件料</strong>。（波峰焊机外观跟上面的回流焊机类似，但是内部功能是不一样的，如下图所示）</p>
+<p><img alt="波峰焊图解" src="../image/%E6%B3%A2%E5%B3%B0%E7%84%8A%E5%9B%BE%E8%A7%A3.png" /></p>
+<h4 id="23">2.3 手工焊接<a class="headerlink" href="#23" title="Permanent link">&para;</a></h4>
+<p>顾名思义，手动利用烙铁头加热焊接材料，通过焊接材料的原子或分子的相互扩散作用，使两种金属间（器件脚和PCB上的焊盘）形成一种永久的牢固结合。</p>
+<p>如果是焊接贴片的物料和一些多引脚的物料，单纯焊接还好，如果是换物料，那就遭老罪了。</p>
+<p><img alt="手工焊接" src="../image/%E6%89%8B%E5%B7%A5%E7%84%8A%E6%8E%A5.png" /></p>
+<h3 id="3_1">3.生产工艺需求对元器件的布局限制<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>生产工艺需求对元器件的布局限制，生产过程中会存在一些问题，而这些工艺方面的问题在无法自行解决的情况下，需要设计者去配合解决。</p>
+<h4 id="31">3.1三防漆的喷涂<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<p>问题：  </p>
+<ul>
+<li>
+<p>1.PCBA贴装好元器件后，为了保护线路板及其相关设备免受环境的侵蚀，还需要机器喷涂三防漆。但三防漆有绝缘作用，处理不当对端子也进行绝缘。</p>
+</li>
+<li>
+<p>2.贴片放置在高大器件之间，喷头无法伸进去喷漆。</p>
+</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li>
+<p>1.贴片器件离开端子、拨码开关等器件原则上5mm以上，最少不低于3mm。</p>
+</li>
+<li>
+<p>2.贴片器件应尽可能远离高大器件，如大的电解电容，功率电感等。</p>
+</li>
+</ul>
+<p><img alt="三防漆" src="../image/%E4%B8%89%E9%98%B2%E6%BC%86.png" /></p>
+<h4 id="32-pcba">3.2 PCBA的运输周转<a class="headerlink" href="#32-pcba" title="Permanent link">&para;</a></h4>
+<p>问题：</p>
+<p>PCBA在运输周转过程中，会存在操作不当，使PCBA较靠板边的器件容易受到损坏。</p>
+<p>方法：</p>
+<p>贴片元器件远离板边放置，电容保证5mm以上，其他器件实在放不下保证3mm以上。</p>
+<p><img alt="PCBA的运输周转" src="../image/PCBA%E7%9A%84%E8%BF%90%E8%BE%93%E5%91%A8%E8%BD%AC.png" /></p>
+<h4 id="33">3.3 元器件的机器贴装<a class="headerlink" href="#33" title="Permanent link">&para;</a></h4>
+<p>问题：</p>
+<p>无论是贴片元器件还是插件元器件在焊接前都需要经过放置材料的过程，分机器放料和手工放料。手工放料存在<strong>效率低下</strong>和<strong>放错位号</strong>的风险，进而能机器放都选择用机器放料。机器放料存在死区，会碰坏周边元器件。</p>
+<p>方法：</p>
+<p>元器件避开死区放置。</p>
+<p><img alt="元器件贴装死区" src="../image/%E5%85%83%E5%99%A8%E4%BB%B6%E8%B4%B4%E8%A3%85%E6%AD%BB%E5%8C%BA.png" /></p>
+<h4 id="34">3.4 机器贴装引申知识<a class="headerlink" href="#34" title="Permanent link">&para;</a></h4>
+<p>AI：卧式插件机插</p>
+<p>RI： 立式插件机插</p>
+<p><img alt="插入卡盘的死区" src="../image/%E6%8F%92%E5%85%A5%E5%8D%A1%E7%9B%98%E7%9A%84%E6%AD%BB%E5%8C%BA.png" /></p>
+<h5 id="topri">顶层（TOP）RI插入卡盘死区<a class="headerlink" href="#topri" title="Permanent link">&para;</a></h5>
+<p><img alt="RI插入卡盘死区" src="../image/RI%E6%8F%92%E5%85%A5%E5%8D%A1%E7%9B%98%E6%AD%BB%E5%8C%BA.png" /></p>
+<p>机械5层 当插装面SMD/AI器件高度为（0~3.3mm），layout时应将其放置在上图（上层，顶层）方框区域以外。</p>
+<p><img alt="顶层_机械5层" src="../image/%E9%A1%B6%E5%B1%82_%E6%9C%BA%E6%A2%B05%E5%B1%82.png" /></p>
+<p>机械11层 当插装面SMD/AI器件高度为（3.3~5.0mm），layout时应将其放置在上图（上层，顶层）方框区域以外。</p>
+<p><img alt="顶层_机械11层" src="../image/%E9%A1%B6%E5%B1%82_%E6%9C%BA%E6%A2%B011%E5%B1%82.png" /></p>
+<p>机械12层 当插装面SMD/AI器件高度为（5.0~12.9mm），layout时应将其放置在上图（上层，顶层）方框区域以外。</p>
+<p><img alt="顶层_机械12层" src="../image/%E9%A1%B6%E5%B1%82_%E6%9C%BA%E6%A2%B012%E5%B1%82.png" /></p>
+<h5 id="bottomri">底层（BOTTOM）RI插入卡盘死区<a class="headerlink" href="#bottomri" title="Permanent link">&para;</a></h5>
+<p>机械13层 当基板下贴片器件高度为(0mm~1.0mm)，layout时应将其放置在下图（下层，底层）外框区域以外。</p>
+<p><img alt="底层_机械13层" src="../image/%E5%BA%95%E5%B1%82_%E6%9C%BA%E6%A2%B013%E5%B1%82.png" /></p>
+<p>机械14层 当基板下贴片器件高度为（1.0mm~2.0mm)，layout时应将其放置在下图（下层，底层）外框区域以外。</p>
+<p><img alt="底层_机械14层" src="../image/%E5%BA%95%E5%B1%82_%E6%9C%BA%E6%A2%B014%E5%B1%82.png" /></p>
+<p>机械15层 当基板下贴片器件高度为（2.0mm~3.0mm)，layout时应将其放置在下图（下层，底层）外框区域以外。</p>
+<p><img alt="底层_机械15层" src="../image/%E5%BA%95%E5%B1%82_%E6%9C%BA%E6%A2%B015%E5%B1%82.png" /></p>
+<p>机械16层 当基板下贴片器件高度为（3mm~7.0mm），layout时应将其放置在下图（下层，底层）外框区域以外。</p>
+<p><img alt="底层_机械16层" src="../image/%E5%BA%95%E5%B1%82_%E6%9C%BA%E6%A2%B016%E5%B1%82.png" /></p>
+<h2 id="pcb_3">四、PCB设计<a class="headerlink" href="#pcb_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1.电路基础知识<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p><img alt="电路基础知识" src="../image/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.png" /></p>
+<h3 id="2">2.元器件以及封装的制作<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>元器件的制作流程<br />
+    a.建立原理图库<br />
+    b.新建元器件<br />
+    c.查看器件规格书<br />
+    d.按规格书中器件的管脚顺序、管脚信息进行编辑<br />
+    e.器件规范标识（通俗易懂可看出是什么器件）  </li>
+<li>封装的制作流程<br />
+    a.建立封装库<br />
+    b.新建元器件<br />
+    c.查看器件规格书<br />
+    d.与规格书器件俯视图一致的管脚位置以及顺序进行编辑<br />
+    e.与实际器件相符的本体外围丝印<br />
+    f.管脚1进行单独标识  </li>
+<li>在器件库中双击元器件把封装加载进去</li>
+</ul>
+<h3 id="3_2">3.层用途以及定义<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>顶层：</p>
+<ul>
+<li>TopLayer：顶层布线层</li>
+<li>TopPaste： 顶层钢网层</li>
+<li>TopSolder：顶层油墨开窗层</li>
+<li>TopOverlay：顶层丝印层</li>
+</ul>
+</li>
+<li>
+<p>底层：</p>
+<ul>
+<li>BottomLayer：底层布线层</li>
+<li>BottomPaste：底层钢网层</li>
+<li>BottomSolder：底层油墨开窗层</li>
+<li>BottomOverlay：底层丝印层</li>
+</ul>
+</li>
+<li>
+<p>机械层（机械层各公司可能要求不同，仅供参考）：</p>
+<ul>
+<li>
+<p>Mechanical1：单板、拼板外框，安规槽，灌胶孔，定位孔，排气孔等
+<img alt="拼板外框" src="../image/%E6%8B%BC%E6%9D%BF%E5%A4%96%E6%A1%86.png" /></p>
+</li>
+<li>
+<p>Mechanical6：厂商LOGO及认证标记
+<img alt="厂商LOGO及认证标记" src="../image/%E5%8E%82%E5%95%86LOGO%E5%8F%8A%E8%AE%A4%E8%AF%81%E6%A0%87%E8%AE%B0.png" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>钢网层：</strong></p>
+<p><img alt="钢网层" src="../image/%E9%92%A2%E7%BD%91%E5%B1%82.png" /></p>
+<h3 id="4pcb">4.封装匹配网络表导入PCB文件<a class="headerlink" href="#4pcb" title="Permanent link">&para;</a></h3>
+<p>4.1 原理图绘制好后，将PCB封装加载到原理图上的元器件中，注意器件的脚位要与封装实际的PIN脚一一对应。</p>
+<p>4.2 检查一下原理图是否有出错，报错的设置：Project&gt;Project Options...</p>
+<p><img alt="原理图_报错的设置" src="../image/%E5%8E%9F%E7%90%86%E5%9B%BE_%E6%8A%A5%E9%94%99%E7%9A%84%E8%AE%BE%E7%BD%AE.jpg" /></p>
+<p>4.3 PCB和原理图进行网络匹配，将封装导入PCB 。</p>
+<p>4.3.1 Project&gt;Component Links...</p>
+<p>4.3.2 Design&gt;Import Changes From XXX.PrjPcb</p>
+<p><img alt="PCB和原理图进行网络匹配" src="../image/PCB%E5%92%8C%E5%8E%9F%E7%90%86%E5%9B%BE%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E5%8C%B9%E9%85%8D.png" /></p>
+<h3 id="5">5.安规、载流等参考依据<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<h4 id="51">5.1 线路的安全距离<a class="headerlink" href="#51" title="Permanent link">&para;</a></h4>
+<ul>
+<li>安全距离类型<ul>
+<li>空气间隙</li>
+<li>爬电距离</li>
+</ul>
+</li>
+<li>决定安全距离的因素<ul>
+<li>爬电介质</li>
+<li>设备类型和使用的环境</li>
+<li>电压的高低</li>
+</ul>
+</li>
+<li>
+<p>安规参考标准</p>
+<ul>
+<li>家用IEC 60335-1:2004(GB 4706.1-2005)</li>
+<li>工业IEC 60664-1:2007(GB/T16935.1-2008)</li>
+</ul>
+</li>
+<li>
+<p>过压类别（决定电气间隙）<br />
+    根据特定电路中产生的预期瞬态过电压和以限制过电压而采用的方法为基础而确定的分类。 
+    <img alt="过压类别" src="../image/%E8%BF%87%E5%8E%8B%E7%B1%BB%E5%88%AB.png" /></p>
+</li>
+<li>
+<p>污染等级（决定爬电距离）<br />
+    用来确定电气间隙或爬电距离的微观环境污染等级。
+    <img alt="污染等级" src="../image/%E6%B1%A1%E6%9F%93%E7%AD%89%E7%BA%A7.png" /></p>
+</li>
+<li>
+<p>相对漏电起痕指数（CTI）</p>
+</li>
+<li>
+<p>材料组别<br />
+    将绝缘材料按CTI值划分为4组：
+    <img alt="相对漏电起痕指数" src="../image/%E7%9B%B8%E5%AF%B9%E6%BC%8F%E7%94%B5%E8%B5%B7%E7%97%95%E6%8C%87%E6%95%B0.png" /></p>
+</li>
+<li>
+<p>如何查表找出适用安全距离？  </p>
+<ul>
+<li>确定爬电介质：<strong>1.空气（空气间隙）2.PCB板（爬电距离）</strong></li>
+<li>设备类型 </li>
+<li>使用的环境</li>
+<li>工作电压</li>
+<li>额定电压 </li>
+<li>额定脉冲电压是多少 </li>
+<li>爬电距离选择PCB板材的材料组别</li>
+</ul>
+</li>
+</ul>
+<h5 id="1_3">例子1<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h5>
+<p>TEST1：家用空调外机板，单相220V输入，输入端L与N之间的电气间隙和爬电距离是多少？</p>
+<p>解：使用家用标准</p>
+<ul>
+<li>电气间隙  <ol>
+<li>过压类别2</li>
+<li>额定电压：220V</li>
+<li>查表得额定脉冲电压：2500V</li>
+<li>故最小电气间隙为：1.5mm
+<img alt="例1_最小电气间隙" src="../image/%E4%BE%8B1_%E6%9C%80%E5%B0%8F%E7%94%B5%E6%B0%94%E9%97%B4%E9%9A%99.png" /></li>
+</ol>
+</li>
+</ul>
+<p>TEST1：家用空调外机板，单相220V输入，输入端L与N之间的电气间隙和爬电距离是多少？</p>
+<p>解：使用家用标准</p>
+<ul>
+<li>爬电距离<ol>
+<li>污染等级3</li>
+<li>额定电压：220V</li>
+<li>与工程师协商用CTI600材料</li>
+<li>故最小爬电距离为：3.2mm
+<img alt="例1_最小爬电距离" src="../image/%E4%BE%8B1_%E6%9C%80%E5%B0%8F%E7%88%AC%E7%94%B5%E8%B7%9D%E7%A6%BB.png" /></li>
+</ol>
+</li>
+</ul>
+<h5 id="2_1">例子2<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h5>
+<p>TEST2：海拔4000米，储能项目，三相380V兼容480V输入，输入端相与相之间的电器间隙和爬电距离是多少？</p>
+<p>解：使用低压系统标准</p>
+<ul>
+<li>电气间隙<ol>
+<li>过压类别3</li>
+<li>额定电压：277V</li>
+<li>查表得额定脉冲电压：4000V</li>
+<li>故最小电气间隙为：3mm</li>
+</ol>
+</li>
+</ul>
+<p><strong>以上答案对了吗？</strong>
+忽略了海拔4000米这个环境因素，应该加上倍率，才能对。
+<img alt="例2_最小电气间隙_错" src="../image/%E4%BE%8B2_%E6%9C%80%E5%B0%8F%E7%94%B5%E6%B0%94%E9%97%B4%E9%9A%99_%E9%94%99.png" /></p>
+<p>TEST2：<strong>海拔4000米</strong>，储能项目，三相380V兼容480V输入，输入端相与相之间的电器间隙和爬电距离是多少？</p>
+<p>解：使用低压系统标准</p>
+<p>注：对于均匀电场，根据帕邢定律，空气中电气间隙的击穿电压正比于电极间距离和大气压的乘积。因此在接近海平面记录的经验数据是按海拔2000米与海平面之间的大气压差异进行修整。对于非均匀电场也采用同样的修整。</p>
+<p>对应的最小电气间隙为：3mm</p>
+<p>海拔修正系数为：1.29</p>
+<p>故最小电气间隙为：3.87mm</p>
+<p><img alt="例2_最小电气间隙_修正" src="../image/%E4%BE%8B2_%E6%9C%80%E5%B0%8F%E7%94%B5%E6%B0%94%E9%97%B4%E9%9A%99_%E4%BF%AE%E6%AD%A3.png" /></p>
+<p>TEST2：<strong>海拔4000米</strong>，储能项目，三相380V兼容480V输入，输入端相与相之间的电器间隙和爬电距离是多少？</p>
+<p>解：使用<strong>低压系统标准</strong></p>
+<ul>
+<li>爬电距离<ol>
+<li>污染等级3</li>
+<li>正常工作时相与相间电压：480V（Max）</li>
+<li>与工程师协商用CTI600材料</li>
+<li>故最小爬电距离为：6.3mm
+<img alt="例2_最小爬电距离" src="../image/%E4%BE%8B2_%E6%9C%80%E5%B0%8F%E7%88%AC%E7%94%B5%E8%B7%9D%E7%A6%BB.png" /></li>
+</ol>
+</li>
+</ul>
+<h4 id="52">5.2 导线的载流能力<a class="headerlink" href="#52" title="Permanent link">&para;</a></h4>
+<h5 id="pcb_4">影响PCB铜箔载流的因素<a class="headerlink" href="#pcb_4" title="Permanent link">&para;</a></h5>
+<p>​   PCB板上导线的载流能力与以下因素</p>
+<p>​   有关：线宽<strong>W</strong>、铜箔的厚度<strong>T</strong>以及容许温升△t。线宽与铜箔的厚度构成截面积<strong>A</strong>。</p>
+<h5 id="_1">载流能力参考标准<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<ul>
+<li>IPC-2221  </li>
+<li>IPC-2221A  </li>
+<li>IPC-2152  </li>
+<li>IPC-2221B  </li>
+</ul>
+<p>关系图（原始图表）</p>
+<p>图A：对于外层导线，电流与截面积的关系；</p>
+<p>图B：导线宽度和截面积的关系；</p>
+<p>图C：对于内层导线，电流与截面积的关系；</p>
+<p><img alt="载流能力参考标准" src="../image/%E8%BD%BD%E6%B5%81%E8%83%BD%E5%8A%9B%E5%8F%82%E8%80%83%E6%A0%87%E5%87%86.png" /></p>
+<h5 id="_2">用什么计算器，计算载流比较符合设计？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p><img alt="软件计算载流对比图" src="../image/%E8%BD%AF%E4%BB%B6%E8%AE%A1%E7%AE%97%E8%BD%BD%E6%B5%81%E5%AF%B9%E6%AF%94%E5%9B%BE.png" /></p>
+<h3 id="6">6.布局布线、工艺调整<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<h4 id="61">6.1 布局设计<a class="headerlink" href="#61" title="Permanent link">&para;</a></h4>
+<p>1、电路板尺寸和图纸要求加工尺寸是否相符合。</p>
+<p>2、电路走向是否与原理图要求的一致，回路面积是否可以做到相对小。</p>
+<p>3、器件之间是否已经预留足够的安规距离和走线空间。</p>
+<p>4、元器件的布局是否均衡、排列整齐、是否已经全部布完。</p>
+<p>5、各个层面有无冲突。如元器件、外框、需要丝印的层面是否合理。</p>
+<p>6、常用到的元器件是否方便使用。如开关、插座、须经常更换的元器件等。</p>
+<p>7、热敏元器件与发热元器件距离是否合理。</p>
+<p>8、散热性是否良好。</p>
+<p>9、线路的干扰问题是否需要考虑。</p>
+<h4 id="62">6.2 布线设计<a class="headerlink" href="#62" title="Permanent link">&para;</a></h4>
+<p>1、按先电源到小信号的布线顺序。</p>
+<p>2、根据电流的大小确定走线的宽细和过孔的数量。</p>
+<p>3、小的分立器件走线须对称，间距比较密的SMT焊盘引线应从焊盘外部连接，不允许在焊盘中间直接连接。 </p>
+<p><img alt="引线应从焊盘外部连接" src="../image/%E5%BC%95%E7%BA%BF%E5%BA%94%E4%BB%8E%E7%84%8A%E7%9B%98%E5%A4%96%E9%83%A8%E8%BF%9E%E6%8E%A5.png" /></p>
+<p>4、环路最小规则，即信号线与其回路构成的环面积要尽可能小，环面积越小，对外的辐射越少，接收外界的干扰也越小。</p>
+<p>5、走线不允许出现STUB。</p>
+<p>6、防止信号线在不同层间形成自环。在多层板设计中容易发生此类问题，自环将引起辐射干扰。</p>
+<p><img alt="防止信号线在不同层间形成自环" src="../image/%E9%98%B2%E6%AD%A2%E4%BF%A1%E5%8F%B7%E7%BA%BF%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%B1%82%E9%97%B4%E5%BD%A2%E6%88%90%E8%87%AA%E7%8E%AF.png" /></p>
+<p>7、PCB设计中应避免产生锐角和直角，产生不必要的辐射，同时PCB生产工艺性能也不好。</p>
+<p><img alt="避免产生锐角和直角" src="../image/%E9%81%BF%E5%85%8D%E4%BA%A7%E7%94%9F%E9%94%90%E8%A7%92%E5%92%8C%E7%9B%B4%E8%A7%92.png" /></p>
+<h4 id="63">6.3 工艺调整<a class="headerlink" href="#63" title="Permanent link">&para;</a></h4>
+<p>1、位号丝印的放置。</p>
+<p>2、重要标识的丝印的放置。</p>
+<p>3、ICT和FCT测试点的放置。</p>
+<p>4、Remark点的放置。</p>
+<p>5、厂家信息位置标识。</p>
+<p>6、过炉方向标识</p>
+<p>7、必要时放置高压标识或客户指定的其他标识</p>
+<h3 id="7drc">7.DRC检查规则<a class="headerlink" href="#7drc" title="Permanent link">&para;</a></h3>
+<h4 id="71">7.1 检查的习惯<a class="headerlink" href="#71" title="Permanent link">&para;</a></h4>
+<p>电路板 设计是一个非常复杂的过程，因为多层板上有数千个连接和电气元件。无论你多么小心或熟练，在使用如此多的组件时，你的设计无疑会出现一些错误。这些错误可能包括错位的别针、错位的签证等。通常，你会在生产阶段发现到这些错误，迫使你进行时间和成本高昂的更正。</p>
+<p><img alt="检查的习惯" src="../image/%E6%A3%80%E6%9F%A5%E7%9A%84%E4%B9%A0%E6%83%AF.png" /></p>
+<h4 id="72">7.2 规则设置<a class="headerlink" href="#72" title="Permanent link">&para;</a></h4>
+<p>7.2.1 Electrical</p>
+<p>7.2.1.1 Clearance（不同网络之间的间距）</p>
+<p><img alt="规则设置" src="../image/%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE.png" /></p>
+<p>7.2.1.2 ShortCircuit（短路设置）</p>
+<p><img alt="短路设置" src="../image/%E7%9F%AD%E8%B7%AF%E8%AE%BE%E7%BD%AE.png" /></p>
+<p>7.2.2 Routing（线路）</p>
+<p>Width（线宽设置）</p>
+<p><img alt="线宽设置" src="../image/%E7%BA%BF%E5%AE%BD%E8%AE%BE%E7%BD%AE.png" /></p>
+<p>7.2.3 Plane</p>
+<p>Polyon Connect Style(铜箔连接类型设置)</p>
+<p><img alt="铜箔连接类型设置" src="../image/%E9%93%9C%E7%AE%94%E8%BF%9E%E6%8E%A5%E7%B1%BB%E5%9E%8B%E8%AE%BE%E7%BD%AE.png" /></p>
+<p>7.2.4 Manufacturing</p>
+<p><img alt="Manufacturing" src="../image/Manufacturing.png" /></p>
+<h3 id="83d">8.提供3D简视图<a class="headerlink" href="#83d" title="Permanent link">&para;</a></h3>
+<p>PCB画好评审后，一般情况下就可以打样了。</p>
+<p>但是因为我们的PCBA并不是最终的成品供终端使用的，还有外壳等其他</p>
+<p>组件要跟PCBA进行组装，那就会存在干涉等相关问题。</p>
+<p>1.客户需求存档备案</p>
+<p>2.客户需要PCBA的3D图来进行结构设计</p>
+<p>3.对通用的结构选用进行评估</p>
+<p><img alt="3D简视图" src="../image/3D%E7%AE%80%E8%A7%86%E5%9B%BE.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      林海城 CC-BY-4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/lin-haicheng" target="_blank" rel="noopener" title="GitHub | lin-haicheng" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/288338838" target="_blank" rel="noopener" title="Bilibili | 彼岸LiH" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92c-26.4-.8-48.2-9.8-65.3-27.2S.7 396.5 0 368.2V169.8c.8-26 9.7-47.6 26.7-65.7C43.8 87.8 65.5 78.8 92 78h29.4L96 52.2c-5.7-5.7-8.6-13-8.6-21.8S90.3 14.3 96 8.6 109 0 117.9 0s16.1 2.9 21.9 8.6L213.1 78h88l74.5-69.4C381.7 2.9 389.2 0 398 0s16.1 2.9 21.9 8.6c5.7 5.7 8.6 13 8.6 21.8s-2.9 16.1-8.6 21.8L394.6 78h29.3c26.4.8 48 9.8 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96c-9.6.4-17.4 3.7-23.6 9.8-6.1 6.1-9.4 13.9-9.8 23.5v194.4c0 9.2 3.3 17 9.8 23.5s14.4 9.8 23.6 9.8h320.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="qq群" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M434.1 420.4c-11.5 1.4-44.9-52.7-44.9-52.7 0 31.3-16.1 72.2-51 101.8 16.8 5.2 54.8 19.2 45.8 34.4-7.3 12.3-125.5 7.9-159.6 4-34.1 3.8-152.3 8.3-159.6-4-9-15.2 28.9-29.2 45.8-34.4-34.9-29.5-51.1-70.4-51.1-101.8 0 0-33.3 54.1-44.9 52.7-5.4-.6-12.4-29.6 9.3-99.7 10.3-33 22-60.5 40.1-105.8C60.9 98 109.2-.1 224.3-.1 338-.1 387.5 96 384.6 214.9c18.1 45.2 29.9 72.9 40.1 105.8 21.8 70.1 14.7 99.1 9.3 99.7z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="小红书 | 林海城" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M96 96c0-35.3 28.7-64 64-64h320c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64zm-72 32c13.3 0 24 10.7 24 24v296c0 8.8 7.2 16 16 16h360c13.3 0 24 10.7 24 24s-10.7 24-24 24H64c-35.3 0-64-28.7-64-64V152c0-13.3 10.7-24 24-24m168 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64m196.5 11.5c-4.4-7.1-12.1-11.5-20.5-11.5s-16.1 4.4-20.5 11.5l-56.3 92.1-24.5-30.6c-4.6-5.7-11.4-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4S174.8 352 184 352h272c8.7 0 16.7-4.7 20.9-12.3s4.1-16.8-.5-24.3l-88-144z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="打赏支持" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 64c0-17.7 14.3-32 32-32h352c70.7 0 128 57.3 128 128s-57.3 128-128 128c0 53-43 96-96 96H160c-53 0-96-43-96-96zm448 96c0-35.3-28.7-64-64-64v128c35.3 0 64-28.7 64-64M64 448h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H64c-17.7 0-32-14.3-32-32s14.3-32 32-32"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "navigation.expand"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../mkdocs/javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
